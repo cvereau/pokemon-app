@@ -1,0 +1,71 @@
+:host {
+  position: fixed;
+  width: 100%;
+}
+
+.topbar {
+  overflow: hidden;
+  background-color: #eeeeee;
+  display: block;
+  height: 50px;
+
+  .topbar__item {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    height: -webkit-fill-available;
+    line-height: 1.5rem;
+
+    &:not(.topbar__item--active):hover {
+      color: darkgray;
+    }
+
+    &:first-child {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+
+  .topbar__item--active {
+    color: #000;
+    font-weight: 600;
+  }
+
+  .topbar__icon {
+    display: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    .topbar__item:not(:first-child):not(.topbar__icon) {
+      display: none;
+    }
+
+    .topbar__icon {
+      display: block;
+      float: right;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    &--responsive {
+      position: relative;
+      height: unset;
+    }
+    &--responsive {
+      .topbar__icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+    &--responsive {
+      .topbar__item {
+        float: none;
+        display: block !important;
+        text-align: left;
+      }
+    }
+  }
+}

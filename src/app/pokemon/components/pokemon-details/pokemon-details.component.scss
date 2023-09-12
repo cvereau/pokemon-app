@@ -1,0 +1,125 @@
+@import '../../scss/pokemon-types';
+
+$secondary-text: #b0b0b0;
+
+.pokemon-details__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+
+  @media screen and (max-width: 600px) {
+    height: unset;
+  }
+}
+
+.pokemon-details__card {
+  background-color: #fff;
+  width: 380px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+  .go-back {
+    position: absolute;
+    padding: 1rem;
+    cursor: pointer; 
+
+    svg:hover {
+      filter: drop-shadow(3px 5px 2px darken(#3cc6d1, 10%));
+    }
+  }
+
+  &-header {
+    width: 100%;
+    display: block;
+  }
+
+  &-types,
+  &-evolutions {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid rgba(153, 153, 153, 0.383);
+    padding: 1rem 0;
+
+    span {
+      color: $secondary-text;
+      font-size: .9rem;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      span {
+        padding-top: 0.4rem;
+        font-size: 0.8rem;
+        color: $secondary-text;
+      }
+
+      &:hover {
+        filter: saturate(200%);
+        transform: scale(1.1);
+        cursor: pointer;
+
+        span {
+          color: #000;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid rgba(153, 153, 153, 0.383);
+
+    &-img {
+      border: 5px solid white;
+      border-radius: 50%;
+      margin-top: -53px;
+      background-color: white;
+      max-width: 100%;
+      max-height: 250px;
+    }
+
+    &-title {
+      margin-top: 2rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+
+      span {
+        color: $secondary-text;
+        font-size: 1.4rem;
+        font-weight: 400;
+      }
+    }
+
+    &-text {
+      color: $secondary-text;
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      padding-top: 0.5rem;
+    }
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-around;
+
+    &-action {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.85rem;
+
+      p {
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

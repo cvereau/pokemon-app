@@ -1,0 +1,66 @@
+<ng-container *ngIf="pokemonDetails$ | async as pokemonDetails">
+  <section class="absolute-center" *ngIf="loadingPokemonDetail">
+    <app-loader></app-loader>
+  </section>
+
+  <section class="pokemon-details__container" *ngIf="!loadingPokemonDetail">
+    <article class="pokemon-details__card">
+      <div class="go-back" (click)="goBack()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="1.5rem" viewBox="0 0 448 512">
+          <path
+            fill="white"
+            d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+          />
+        </svg>
+      </div>
+      <img src="assets/img/pokemon-card/bg-pattern-card.svg" alt="card-header" class="pokemon-details__card-header" />
+      <div class="pokemon-details__card-body">
+        <img [src]="pokemonDetails.imageUrl" [alt]="pokemonDetails.name" class="pokemon-details__card-body-img" />
+        <div class="pokemon-details__card-body-title">
+          {{ pokemonDetails.name | titlecase }}
+          <span>{{ pokemonDetails.hp }} hp</span>
+        </div>
+        <p class="pokemon-details__card-body-text">{{ pokemonDetails.experience }} exp</p>
+      </div>
+      <div class="pokemon-details__card-types">
+        <div
+          *ngFor="let type of pokemonDetails.types"
+          class="pokemon-type tooltip top"
+          [ngClass]="type.name"
+          [attr.data-tooltip]="type.name"
+        >
+          <img [src]="type.imageLocation" [alt]="type.name" />
+        </div>
+      </div>
+      <div class="pokemon-details__card-evolutions">
+        <ng-container *ngIf="pokemonEvolutionDetails$ | async as pokemonEvolutionDetails; else evosLoading">
+          <div
+            *ngFor="let evo of pokemonEvolutionDetails"
+            class="pokemon-details__card-evolutions-item"
+            (click)="goToPokemonDetail(evo)"
+          >
+            <img [src]="evo.imageUrl" [alt]="evo.name" height="50" />
+            <span>{{ evo.name }}</span>
+          </div>
+        </ng-container>
+        <ng-template #evosLoading>
+          <span>Loading...</span>
+        </ng-template>
+      </div>
+      <div class="pokemon-details__card-footer">
+        <div class="pokemon-details__card-footer-action">
+          <h3>{{ pokemonDetails.attack }}K</h3>
+          <p>Attack</p>
+        </div>
+        <div class="pokemon-details__card-footer-action">
+          <h3>{{ pokemonDetails.special }}K</h3>
+          <p>Special</p>
+        </div>
+        <div class="pokemon-details__card-footer-action">
+          <h3>{{ pokemonDetails.defense }}K</h3>
+          <p>Defense</p>
+        </div>
+      </div>
+    </article>
+  </section>
+</ng-container>
