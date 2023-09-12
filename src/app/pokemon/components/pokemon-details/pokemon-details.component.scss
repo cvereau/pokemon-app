@@ -8,6 +8,10 @@ $secondary-text: #b0b0b0;
   align-items: center;
   height: calc(100vh - 100px);
 
+  @media (min-width: 601px) and (max-width: 1400px) {
+    height: 100%;
+  }
+
   @media screen and (max-width: 600px) {
     height: unset;
   }

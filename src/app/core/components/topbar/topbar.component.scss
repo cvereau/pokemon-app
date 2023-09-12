@@ -8,7 +8,6 @@
   overflow: hidden;
   background-color: #eeeeee;
   display: block;
-  height: 50px;
 
   .topbar__item {
     float: left;
@@ -52,7 +51,6 @@
   @media screen and (max-width: 600px) {
     &--responsive {
       position: relative;
-      height: unset;
     }
     &--responsive {
       .topbar__icon {
