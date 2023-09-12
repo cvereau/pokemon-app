@@ -3,11 +3,12 @@
     <img src="assets/img/pokemon-logo.png" alt="Pokemon Logo" height="22" width="auto" />
   </a>
   <a
-    href="#"
+    href="javascript:void(0)"
     class="topbar__item"
     *ngFor="let menuItem of menuItems"
     [routerLink]="menuItem.url"
     routerLinkActive="topbar__item--active"
+    (click)="isResponsive = !isResponsive"
     >{{ menuItem.name }}</a
   >
   <a href="javascript:void(0);" class="topbar__item topbar__icon" (click)="toggleResponsiveMenu()">
