@@ -8,6 +8,14 @@ This app is uses https://pokeapi.co/docs/v2 as data source.
 You can check the site deployed in here: http://pokemon-app.cesarvereau.com/
 Don't forget to try it on you phone!
 
+## Instructions
+
+To run the project locally:
+
+1. npm install -g pnpm
+2. pnpm install
+3. ng serve
+
 ## Technologies
 
 - Angular 15
@@ -15,6 +23,7 @@ Don't forget to try it on you phone!
 - rxjs (advanced)
 - Scss (flexbox and css-grid) BEM Methodology used, Responsive design.
 - ngx-toastr
+- pnpm (package manager)
 
 ## Components
 
