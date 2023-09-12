@@ -5,7 +5,7 @@ This app is uses https://pokeapi.co/docs/v2 as data source.
 
 ## Demo
 
-You can check the site deployed in here: http://poke-app.cesarvereau.com/
+You can check the site deployed in here: http://pokemon-app.cesarvereau.com/
 Don't forget to try it on you phone!
 
 ## Technologies
