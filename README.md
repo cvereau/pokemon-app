@@ -1,6 +1,42 @@
 # PokemonApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.3.
+This responsive app shows a list of all pokemons and most relevant information on each of them. Nicely designed an coded.
+This app is uses https://pokeapi.co/docs/v2 as data source.
+
+## Demo
+
+You can check the site deployed in here: http://pokemon-app.cesarvereau.com/
+Don't forget to try it on you phone!
+
+## Technologies
+
+- Angular 15
+- Ngrx 
+- rxjs (advanced)
+- Scss (flexbox and css-grid) BEM Methodology used, Responsive design.
+- ngx-toastr
+
+## Components
+
+### Topbar Navigation
+
+A responsive and fixed topbar menu to access the pokemons section and a credits page.
+### Pokemon List
+
+A list of all pokemons with gmail-like pagination (30 pokemons per page) and responsive cards built with css-grid. You can click on any pokemon you like to access the pokemon details page.
+
+### Pokemon Details
+
+A page for showing most relevant details on a selected pokemon, including types and evolutions. You can navigate into a specific evolution from the details page, and also navigate back to the pokemon list page without losing the state.
+
+## Utilities
+
+The following component utilities were made from scratch without any external libraries:
+
+- Reponsive menu
+- loading animation
+- Pokemon Type tooltip
+- Pokemon Details Card
 
 ## Development server
 
@@ -13,6 +49,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running linting
+
+Run `ng lint` to run the linter.
 
 ## Running unit tests
 
